@@ -1,0 +1,120 @@
+1. Company Overview
+Name: Cyfuture India Pvt. Ltd.
+
+Founded: 2000 (as Cyber Futuristics; rebranded to Cyfuture in 2021)
+
+Headquarters: Noida, Uttar Pradesh, India
+
+Motto: “Thinking Future, Moving Ahead”
+
+Vision: Drive sustainable, long-term impact by combining problem-solving and technical innovation.
+
+Website: cyfuture.com
+
+2. Global Presence & Data-Center Footprint
+Physical Locations: Nine facilities across India (Noida, Mumbai, Bangalore, Jaipur), plus sites in the USA and UK
+
+Data-Center Tier: Tier III (high-availability infrastructure, proprietary IVY management)
+
+3. Core Services & Brands
+Service Area	Brands / Platforms	Notes
+Data Center & Hosting	Go4hosting, CloudOYE, DialWebHosting	Per-hour billing; Intel & AMD-based customization
+Cloud & Infrastructure (IaaS)	—	Partnerships with Google Cloud, AWS, Azure, Alibaba
+Business Process Services	Go4customer, AskPCExperts	24×7 support, help-desk, managed chatbots
+Enterprise Applications	—	ERP, CRM, custom solutions
+Design & Development	—	Web, mobile, API integrations
+Chatbot Services	—	Conversational AI
+IoT, AI & Big Data Analytics	—	End-to-end analytics pipelines
+Digital Marketing & Consulting	—	SEO, PPC, content strategy
+Video Conferencing	—	Hosted & on-premise solutions
+Niche Tools	DataBaGG (storage), Ninja TuneUp (PC clean-up)	—
+
+4. Industry Verticals
+E-commerce & Retail
+
+Banking & Financial Services
+
+Information Technology & Software Services
+
+Education
+
+Government & Public Sector
+
+Manufacturing, Telecom, Transport & Logistics, Travel & Hospitality
+
+5. Certifications & Technology Partnerships
+Certifications:
+
+CMMI Level 3
+
+ISO 20000-1:2011
+
+ANSI/TIA-942
+
+SOC 1, 2 & 3 Trust Principles
+
+Partnerships & Recognitions:
+
+Google Cloud Partner, AWS Select Partner, Azure, Alibaba Cloud
+
+Intel Gold Partner, VMware Cloud Verified
+
+The Economic Times “Promising Brand 2021”
+
+Rajasthan Export Award
+
+Great Place to Work Certified
+
+6. Leadership Team
+Anuj Bairathi, Chief Executive Officer
+
+Ajai [Last Name], Chief Technology Officer
+
+Shreesh Chaurasia, Vice President, Digital Marketing
+
+Md Salim, Vice President, Enterprise Cloud
+
+7. Awards & Recognition
+Rajasthan Export Award (for export excellence)
+
+Economic Times Promising Brand 2021
+
+Great Place to Work Certification
+
+8. Refund Policy Highlights
+Domain Registration
+
+Duplicate Registration: Refund of the domain fee only, if Cyfuture can’t secure the requested name.
+
+Misspelled Requests: No refund if the client’s spelling error still results in registration.
+
+Domain Transfer & Renewal
+
+Transfers: Fees are fully earned once transfer begins; no refunds on cancellation.
+
+Renewals: Non-refundable; non-payment simply leads to expiration.
+
+Abuse, Violations & Suspensions
+
+Immediate suspension/termination for policy violations (spam, hacking, prohibited content, excessive resource use). No refunds or data restoration.
+
+Service Cancellation & Pay-As-You-Go Billing
+
+Requires 30–60 days’ written notice. Customer pays all usage through effective cancellation date; excess usage billed in the current month.
+
+No refunds for unused credits or prepayments under the pay-as-you-go model.
+
+How to Request a Refund or Raise Queries
+
+Email: support@cyfuture.cloud
+
+Phone: +91 120 661 9504
+
+Quick Links
+About Us: https://cyfuture.com/about-us.html
+
+Corporate Brochure: https://cyfuture.com/document/cyfuture-brochure.pdf
+
+Careers: https://cyfuture.com/careers.html
+
+Terms & Conditions: https://cyfuture.com/terms-and-conditions.html
