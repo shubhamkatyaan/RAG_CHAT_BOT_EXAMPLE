@@ -1,15 +1,5 @@
-# test_rag.py
-from app.rag.retriever import retrieve
-from app.rag.llm       import generate
-
-def main():
-    query = "What is the loaction of comapny"
-    ctx   = retrieve(query)
-    answer = generate(query, ctx)
-    print("Answer:\n", answer)
-    print("\nTop contexts:")
-    for c in ctx:
-        print(f"- ({c['source']} chunk {c['chunk_id']}): {c['text'][:200]}…")
-
-if __name__ == "__main__":
-    main()
+import os, requests
+API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-small"
+headers = {"Authorization": f"Bearer {os.getenv('HF_API_TOKEN')}"}
+resp = requests.post(API_URL, headers=headers, json={"inputs":"Test"})
+print(resp.status_code, resp.json())

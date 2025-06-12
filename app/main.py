@@ -1,4 +1,6 @@
 # app/main.py
+from dotenv import load_dotenv
+load_dotenv()    # now os.environ is populated from .env
 from fastapi import FastAPI
 
 from app.api.complaints import router as complaints_router
