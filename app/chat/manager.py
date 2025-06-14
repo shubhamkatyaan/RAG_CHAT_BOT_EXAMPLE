@@ -33,7 +33,6 @@ class ConversationManager:
 
     @classmethod
     def _triggered(cls, text: str) -> bool:
-        # Trigger complaint session with flexible patterns
         return bool(re.search(r"(file|raise|log|register|report|submit).*complaint", text, re.IGNORECASE)) \
             or text.lower().strip() in ["i want to file a complaint", "report a problem"]
 
@@ -42,20 +41,22 @@ class ConversationManager:
         now = time.time()
         session = cls.sessions.get(user_id)
 
-        # Expire session if too old
         if session and (now - session.get("started_at", now)) > cls.expiry_seconds:
             cls._reset_session(user_id)
             session = None
 
-        # If no session and user wants to start complaint
         if session is None:
             if cls._triggered(text):
-                cls.sessions[user_id] = {"collected": {}, "started_at": now, "confirm_pending": False}
+                cls.sessions[user_id] = {
+                    "collected": {},
+                    "started_at": now,
+                    "confirm_pending": False
+                }
                 return cls.field_questions["name"], False, {}
 
             return None, False, {}
 
-        # Support field correction (e.g., "change phone number")
+        # Support field correction
         for field in cls.field_order:
             if f"change {field}" in text.lower():
                 cls.sessions[user_id]["collected"].pop(field, None)
@@ -74,14 +75,14 @@ class ConversationManager:
                 cls._reset_session(user_id)
                 return "Okay, your complaint was not submitted. If you’d like to try again, just let me know.", False, {}
 
-        # Determine next missing field
+        # Ask next missing field
         for field in cls.field_order:
             if field not in collected:
                 value = text.strip()
 
-                # Basic validation
                 if field == "phone_number" and not cls._is_valid_phone(value):
                     return "Please enter a valid phone number (7–15 digits).", False, {}
+
                 if field == "email" and not cls._is_valid_email(value):
                     return "Please enter a valid email address.", False, {}
 
@@ -93,7 +94,7 @@ class ConversationManager:
                     next_q = cls.field_questions[remaining[0]].format(name=collected.get("name", ""))
                     return next_q, False, {}
 
-                # All fields collected → confirmation step
+                # All collected — confirm
                 preview = (
                     f"Here's what I have:\n"
                     f"Name: {collected['name']}\n"
@@ -105,6 +106,5 @@ class ConversationManager:
                 session["confirm_pending"] = True
                 return preview, False, {}
 
-        # Fallback
         cls._reset_session(user_id)
         return None, True, collected

@@ -1,8 +1,9 @@
 fastapi
-uvicorn[standard]
-motor
+uvicorn
+httpx
+requests
 pydantic
 python-dotenv
-# (future RAG deps:)
-transformers
 faiss-cpu
+sentence-transformers
+

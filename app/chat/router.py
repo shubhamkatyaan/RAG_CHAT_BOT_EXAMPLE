@@ -30,12 +30,21 @@ async def chat_endpoint(req: ChatRequest):
     if m and "complaint" in text:
         complaint_id = m.group(1)
         async with httpx.AsyncClient() as client:
-            resp = await client.get(f"http://127.0.0.1:8000/complaints/{complaint_id}")
+            resp = await client.get(
+                f"http://127.0.0.1:8000/complaints/{complaint_id}",
+                headers={"user-id": user_id}  # ✅ send user ID for validation
+            )
+
+        if resp.status_code == 403:
+            return ChatResponse(
+                reply="🚫 You are not authorized to view this complaint.",
+                complaint_id=complaint_id
+            )
+
         if resp.status_code == 200:
             data = resp.json()
             status = data.get("status", "Pending")
 
-            # Return only status if question mentions 'status' or 'track'
             if any(word in text for word in ["status", "track", "progress", "update"]):
                 return ChatResponse(
                     reply=f"The status of your complaint is: {status}",
@@ -43,7 +52,6 @@ async def chat_endpoint(req: ChatRequest):
                     status=status
                 )
 
-            # Else return full complaint info
             detail_msg = (
                 f"🆔 Complaint ID: {data['complaint_id']}\n"
                 f"📌 Status: {status}\n"
@@ -58,6 +66,7 @@ async def chat_endpoint(req: ChatRequest):
                 complaint_id=complaint_id,
                 status=status
             )
+
         else:
             raise HTTPException(status_code=404, detail="Complaint not found")
 
@@ -68,7 +77,8 @@ async def chat_endpoint(req: ChatRequest):
     if done:
         async with httpx.AsyncClient() as client:
             resp = await client.post(
-                "http://127.0.0.1:8000/complaints", json=data
+                "http://127.0.0.1:8000/complaints", json=data,
+                headers={"user-id": user_id}  # ✅ Pass user-id to backend
             )
         if resp.status_code == 200:
             j = resp.json()
