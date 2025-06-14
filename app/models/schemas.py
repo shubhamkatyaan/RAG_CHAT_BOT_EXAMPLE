@@ -1,7 +1,6 @@
-# app/models/schemas.py
-
 from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
+from typing import Literal
 
 class ComplaintCreate(BaseModel):
     name: str = Field(..., min_length=1)
@@ -20,3 +19,4 @@ class ComplaintOut(BaseModel):
     email: EmailStr
     complaint_details: str
     created_at: datetime
+    status: Literal["Pending", "In Progress", "Delayed", "Resolved"]  # ✅ added

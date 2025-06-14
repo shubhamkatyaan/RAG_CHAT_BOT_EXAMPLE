@@ -7,8 +7,17 @@ from app.api.complaints import router as complaints_router
 from app.chat.router    import router as chat_router
 from app.rag.retriever  import retrieve
 from app.rag.llm        import generate
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="RAG-Chatbot Complaint API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # 👈 frontend origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 1) Complaint API
 app.include_router(complaints_router, prefix="/complaints", tags=["complaints"])
